@@ -1,6 +1,14 @@
-import 'dart:ffi';
-
 void main() {
-  int _salom = 1;
-  print("Hello world");
+  var firstName = "Husan";
+  var lastName = "Azamov";
+  var middleName = "Abdullayevich";
+
+  var fullName = "$firstName $middleName $lastName";
+  print(fullName);
+
+  printPdp("Hello world");
+}
+
+void printPdp(String data) {
+  print(data);
 }
