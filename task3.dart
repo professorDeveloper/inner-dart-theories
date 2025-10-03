@@ -12,13 +12,25 @@
 //Task3.2
 // Berilgan 3,7,11,23,5 tub sonlarining o`rtacha qiymatini toping.
 
-void main() {
-  var son1, son2, son3, son4, son5;
-  son1 = 3;
-  son2 = 7;
-  son3 = 11;
-  son4 = 23;
-  son5 = 5;
-  var ortaQiymat = (son1 + son2 + son3 + son4 + son5) / 5;
-  print(ortaQiymat);
-}
+// void main() {
+//   var son1, son2, son3, son4, son5;
+//   son1 = 3;
+//   son2 = 7;
+//   son3 = 11;
+//   son4 = 23;
+//   son5 = 5;
+//   var ortaQiymat = (son1 + son2 + son3 + son4 + son5) / 5;
+//   print(ortaQiymat);
+// }
+
+
+//Task 3.3
+//Radiusi 10 bo`lgan sharning sirtining yuzini va hajmini toping.
+// void main() {
+//   double radius = 10;
+//   double yuzi = 3.14 * radius * radius;
+//   double hajmi = 4 / 3 * 3.14 * radius * radius * radius;
+//   print("Yuzi: $yuzi");
+//   print("Hajmi: $hajmi");
+// }
+
