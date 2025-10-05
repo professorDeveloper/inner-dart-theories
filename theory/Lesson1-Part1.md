@@ -8,6 +8,18 @@
 - Hot reload, tez prototiplash va AOT/JIT compilation imkoniyatlari
 - Flutter framework asosiy tili
 
+## Dartning ichki mexanizmlari va chuqur xususiyatlari
+
+- **Dart VM**: Dastur kodini runtime’da interpretatsiya va JIT orqali machine code ga aylantiradi (debug/hot reload uchun). Release buildda esa AOT compiler ishlaydi va VM faqat memory management, garbage collection uchun minimal qismda qoladi.
+- **Isolates**: Dartda har bir parallel jarayon (thread) alohida memory va event loop bilan ishlaydi. Bu concurrency va multi-threading uchun xavfsiz va samarali.
+- **Async/await**: Dartda asinxron kod yozish uchun async/await sintaksisi mavjud. Bu server, mobil va web ilovalarda tez va samarali ishlash imkonini beradi.
+- **Cross-platform**: Dart VM CLI, server, desktop, mobil ilovalar uchun ishlaydi. Flutter orqali Android, iOS, Web, Desktop uchun bitta koddan ilova yaratish mumkin.
+- **Null safety**: Dartda null safety mavjud – bu xatoliklarni oldini olish va kodni xavfsiz qilish uchun muhim.
+- **Package ekotizimi**: Pub.dev orqali minglab paketlar va kutubxonalar mavjud, ular orqali Dart imkoniyatlari kengaytiriladi.
+- **Kompilyatsiya**: Dart kodini JIT (Just-In-Time) va AOT (Ahead-Of-Time) usullari bilan kompilyatsiya qilish mumkin. Debugda JIT, release’da AOT ishlaydi.
+
+---
+
 # Android VMlar va Dart/Flutter Compilation
 
 ## JIT (Just-In-Time) nima?
