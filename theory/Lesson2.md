@@ -143,8 +143,46 @@ void main() {
   int a = 5;
   a += 2;
   print(a); // 7
-  a -= 3;
   print(a); // 4
+## 4. Bitwise Operatorlar
+
+**Tavsif:**
+Bitwise operatorlar sonlarni bitlar (0 va 1) darajasida boshqaradi. Ular past darajadagi dasturlashda, flaglar, masklar, optimizatsiya va apparat bilan ishlashda keng qo‘llaniladi.
+
+**Nega kerak?**
+Kompyuter xotirasi va protsessor faqat 0 va 1 (bitlar) bilan ishlaydi. Bitwise operatorlar yordamida ma’lumotlarni tez va samarali boshqarish, xotirani tejash, apparat resurslarini to‘g‘ri taqsimlash mumkin. Masalan, bir nechta flaglarni bitta butun son ichida saqlash va boshqarish uchun bitwise operatorlar ishlatiladi.
+
+**Nima uchun natija 2 lik sanoq sistemada bo‘ladi?**
+Har bir son kompyuterda 2 lik sanoq sistemada (binary) saqlanadi. Masalan, 5 = 101, 3 = 011. Bitwise operatorlar har bir bitni alohida solishtiradi yoki o‘zgartiradi. Natija ham binary ko‘rinishda hosil bo‘ladi, lekin ekranga decimal (10 lik) ko‘rinishda chiqadi.
+
+**Bitwise operatorlar qanday ishlaydi?**
+| Operator | Ma'nosi | Misol    | Binary amal | Natija |
+|----------|---------|----------|-------------|--------|
+| &        | AND     | 5 & 3    | 101 & 011   | 001 (1)|
+| |        | OR      | 5 | 3    | 101 | 011   | 111 (7)|
+| ^        | XOR     | 5 ^ 3    | 101 ^ 011   | 110 (6)|
+
+**Misollar va izoh:**
+```dart
+void main() {
+  print(5 & 3); // 1, chunki: 101 & 011 = 001
+  print(5 | 3); // 7, chunki: 101 | 011 = 111
+  print(5 ^ 3); // 6, chunki: 101 ^ 011 = 110
+}
+```
+
+**Savol-javob:**
+- Nega bitwise operatorlar qo‘shilgan?
+  - Dasturda xotirani tejash, flaglarni boshqarish, apparat bilan to‘g‘ridan-to‘g‘ri ishlash va tezlik uchun.
+- Nega natija binary bo‘ladi?
+  - Kompyuterda barcha sonlar binary ko‘rinishda saqlanadi va bitwise operatorlar har bir bitni alohida boshqaradi.
+- Qachon ishlatish kerak?
+  - Flaglar, masklar, apparat interfeyslari, optimizatsiya va past darajadagi amallarda.
+
+**Qo‘shimcha:**
+Bitwise operatorlar dasturda murakkab va tez ishlovchi algoritmlar yaratishda juda foydali. Ular yordamida bir nechta boolean qiymatlarni bitta integerda saqlash, apparat resurslarini boshqarish va xotirani tejash mumkin.
+
+----
   a *= 2;
   print(a); // 8
   a /= 2;
