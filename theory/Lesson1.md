@@ -1,58 +1,12 @@
----
 
-## Dart / Flutter Release (AOT)
+# Dart haqida qisqacha
 
-Dart release APK / ilovasida:
-- AOT compiler source code’ni machine code ga aylantiradi
-- Yakunda foydalanuvchi APK / iOS ilovasida deyarli bytecode bo‘lmaydi
-- Minimal VM qismi faqat garbage collection yoki memory management uchun qolishi mumkin
+**Dart** – Google tomonidan ishlab chiqilgan, 2011-yilda e’lon qilingan dasturlash tili. Asosan web, mobil (Flutter), server va desktop ilovalar uchun mo‘ljallangan.
 
-**Flow:**
-```
-Dart source → AOT Compiler → Machine Code → APK → CPU executes directly
-```
-
----
-
-## Android Native Release (ART)
-
-Android release APK’da:
-- AOT compiler (ART) source code / bytecode (.dex) → machine code
-- Lekin ART VM hali ham runtime’da mavjud
-       - Garbage collection
-       - Memory management
-       - Ba’zi runtime optimizations
-- Bu holatda bytecode deyarli ishlatilmaydi, lekin minimal mapping qoladi
-
-**Flow:**
-```
-Java/Kotlin source → .dex bytecode → ART AOT Compiler → Machine Code → APK
-Runtime: ART VM manages memory & GC, CPU executes machine code
-```
-
----
-
-## Xulosa: Dart AOT vs Android ART
-
-| Feature      | Dart AOT release                | Android ART release           |
-|-------------|----------------------------------|------------------------------|
-| Bytecode    | De-facto yo‘q (minimal mapping)  | De-facto yo‘q (minimal VM mapping) |
-| Machine code| Tayyor APK ichida → CPU          | Tayyor APK ichida → CPU      |
-| VM          | Minimal (garbage collection)     | ART VM har doim mavjud        |
-| Performance | Tez, lag yo‘q                    | Tez, lag yo‘q                |
-
----
-
-## Dart VM va uning ishlashi haqida qo‘shimcha
-
-- Dart VM – dastur kodini runtime’da interpretatsiya va JIT orqali machine code ga aylantiradi (debug/hot reload uchun)
-- Release buildda esa AOT compiler ishlaydi va VM faqat memory management, garbage collection uchun minimal qismda qoladi
-- Dart VM cross-platform: CLI, server, desktop, mobil ilovalar uchun ishlaydi
-- Dart VM’da isolates (multi-threading) va async/await (asynchronous programming) qo‘llab-quvvatlanadi
-
-**Foydali:**
-- Debug mode’da hot reload, tez prototiplash
-- Release mode’da maksimal performance va barqarorlik
+**Dart nima?**
+- Object-oriented, strongly typed, C-style syntax
+- Hot reload, tez prototiplash va AOT/JIT compilation imkoniyatlari
+- Flutter framework asosiy tili
 
 # Android VMlar va Dart/Flutter Compilation
 
@@ -159,6 +113,7 @@ ART JIT (runtime)
 Machine code → CPU
 ```
 
+
 **Dart release APK:**
 ```
 Dart source
@@ -172,3 +127,59 @@ Machine code → APK ichida tayyor
        ▼
 CPU executes directly (minimal VM)
 ```
+
+---
+
+## Dart / Flutter Release (AOT)
+
+Dart release APK / ilovasida:
+- AOT compiler source code’ni machine code ga aylantiradi
+- Yakunda foydalanuvchi APK / iOS ilovasida deyarli bytecode bo‘lmaydi
+- Minimal VM qismi faqat garbage collection yoki memory management uchun qolishi mumkin
+
+**Flow:**
+```
+Dart source → AOT Compiler → Machine Code → APK → CPU executes directly
+```
+
+---
+
+## Android Native Release (ART)
+
+Android release APK’da:
+- AOT compiler (ART) source code / bytecode (.dex) → machine code
+- Lekin ART VM hali ham runtime’da mavjud
+    - Garbage collection
+    - Memory management
+    - Ba’zi runtime optimizations
+- Bu holatda bytecode deyarli ishlatilmaydi, lekin minimal mapping qoladi
+
+**Flow:**
+```
+Java/Kotlin source → .dex bytecode → ART AOT Compiler → Machine Code → APK
+Runtime: ART VM manages memory & GC, CPU executes machine code
+```
+
+---
+
+## Xulosa: Dart AOT vs Android ART
+
+| Feature      | Dart AOT release                | Android ART release           |
+|-------------|----------------------------------|------------------------------|
+| Bytecode    | De-facto yo‘q (minimal mapping)  | De-facto yo‘q (minimal VM mapping) |
+| Machine code| Tayyor APK ichida → CPU          | Tayyor APK ichida → CPU      |
+| VM          | Minimal (garbage collection)     | ART VM har doim mavjud        |
+| Performance | Tez, lag yo‘q                    | Tez, lag yo‘q                |
+
+---
+
+## Dart VM va uning ishlashi haqida qo‘shimcha
+
+- Dart VM – dastur kodini runtime’da interpretatsiya va JIT orqali machine code ga aylantiradi (debug/hot reload uchun)
+- Release buildda esa AOT compiler ishlaydi va VM faqat memory management, garbage collection uchun minimal qismda qoladi
+- Dart VM cross-platform: CLI, server, desktop, mobil ilovalar uchun ishlaydi
+- Dart VM’da isolates (multi-threading) va async/await (asynchronous programming) qo‘llab-quvvatlanadi
+
+**Foydali:**
+- Debug mode’da hot reload, tez prototiplash
+- Release mode’da maksimal performance va barqarorlik
