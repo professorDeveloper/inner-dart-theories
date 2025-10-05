@@ -117,4 +117,5 @@ CPU
 
 ---
 
-Bu bo‘limda Dart va Kotlin platformalarining GC, SDK, VM, va compilation flowlari batafsil taqqoslandi. O‘quvchilar uchun har bir texnologiyaning afzallik va kamchiliklari aniq ko‘rsatilgan.
+Bu bo‘limda Dart va Kotlin platformalarining GC, SDK, VM, va compilation flowlari batafsil taqqoslandi.Har bir texnologiyaning afzallik va kamchiliklari  ko‘rsatilgan.
+
