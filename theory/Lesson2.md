@@ -99,54 +99,6 @@ void main() {
 ## 4. Bitwise Operatorlar
 
 **Tavsif:**
-Bitwise operatorlar sonlarni bitlar darajasida boshqaradi. Ular asosan past darajadagi dasturlashda, masalan, flaglar, masklar va optimizatsiya uchun ishlatiladi.
-
-**Nima uchun shunday?**
-Kompyuterda har bir son bitlar to‘plami sifatida saqlanadi. Bitwise operatorlar bu bitlar ustida to‘g‘ridan-to‘g‘ri amallar bajaradi. Masalan, `&` operatori ikkala sonning faqat 1 bo‘lgan bitlarini saqlaydi.
-
-| Operator | Ma'nosi | Misol    | Natija |
-|----------|---------|----------|--------|
-| &        | AND     | 5 & 3    | 1      |
-| |        | OR      | 5 | 3    | 7      |
-| ^        | XOR     | 5 ^ 3    | 6      |
-
-```dart
-void main() {
-  print(5 & 3); // 1
-  print(5 | 3); // 7
-  print(5 ^ 3); // 6
-}
-```
-
----
-
-
-## 5. Belgilash Operatorlari
-
-**Tavsif:**
-Belgilash operatorlari o‘zgaruvchiga qiymat berish va uni yangilash uchun ishlatiladi. Ular kodni qisqartirish va o‘qishni osonlashtirish uchun qulay.
-
-**Nima uchun shunday?**
-`a += 2` operatori aslida `a = a + 2` ga teng. Bu sintaksis kodni qisqa va aniq yozish uchun yaratilgan. Kompilyator buni avtomatik ravishda to‘g‘ri amalga aylantiradi.
-
-| Operator | Ma'nosi         | Misol         | Natija |
-|----------|-----------------|--------------|--------|
-| =        | Belgilash       | a = 5        | 5      |
-| +=       | Qo'shib belgilash| a += 2      | 7      |
-| -=       | Ayirib belgilash | a -= 3      | 4      |
-| *=       | Ko'paytirib belgilash| a *= 2  | 8      |
-| /=       | Bo'lib belgilash| a /= 2      | 4.0    |
-| %=       | Qoldiq belgilash| a %= 3      | 1      |
-
-```dart
-void main() {
-  int a = 5;
-  a += 2;
-  print(a); // 7
-  print(a); // 4
-## 4. Bitwise Operatorlar
-
-**Tavsif:**
 Bitwise operatorlar sonlarni bitlar (0 va 1) darajasida boshqaradi. Ular past darajadagi dasturlashda, flaglar, masklar, optimizatsiya va apparat bilan ishlashda keng qo‘llaniladi.
 
 **Nega kerak?**
@@ -183,6 +135,30 @@ void main() {
 Bitwise operatorlar dasturda murakkab va tez ishlovchi algoritmlar yaratishda juda foydali. Ular yordamida bir nechta boolean qiymatlarni bitta integerda saqlash, apparat resurslarini boshqarish va xotirani tejash mumkin.
 
 ----
+
+
+## 5. Belgilash Operatorlari
+
+**Tavsif:**
+Belgilash operatorlari o‘zgaruvchiga qiymat berish va uni yangilash uchun ishlatiladi. Ular kodni qisqartirish va o‘qishni osonlashtirish uchun qulay.
+
+**Nima uchun shunday?**
+`a += 2` operatori aslida `a = a + 2` ga teng. Bu sintaksis kodni qisqa va aniq yozish uchun yaratilgan. Kompilyator buni avtomatik ravishda to‘g‘ri amalga aylantiradi.
+
+| Operator | Ma'nosi         | Misol         | Natija |
+|----------|-----------------|--------------|--------|
+| =        | Belgilash       | a = 5        | 5      |
+| +=       | Qo'shib belgilash| a += 2      | 7      |
+| -=       | Ayirib belgilash | a -= 3      | 4      |
+| *=       | Ko'paytirib belgilash| a *= 2  | 8      |
+| /=       | Bo'lib belgilash| a /= 2      | 4.0    |
+| %=       | Qoldiq belgilash| a %= 3      | 1      |
+
+```dart
+void main() {
+  int a = 5;
+  a += 2;
+  print(a); // 7
   a *= 2;
   print(a); // 8
   a /= 2;
