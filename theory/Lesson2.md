@@ -1,6 +1,16 @@
-# Dart Operatorlari: To'liq Qo'llanma va Misollar
+
+# Dart Operatorlari: To'liq Qo'llanma, Tavsif va Isbot
+
+Dart tilida operatorlar – bu o‘zgaruvchilar va qiymatlar ustida amallar bajarish uchun ishlatiladigan maxsus belgilar yoki ifodalar. Har bir operatorning maqsadi, ishlash mexanizmi va natijasi bor. Quyida har bir operator turi bo‘yicha qisqacha tavsif, misollar va nima uchun shunday ishlashini izoh bilan ko‘rib chiqamiz.
+
 
 ## 1. Arifmetik Operatorlar
+
+**Tavsif:**
+Arifmetik operatorlar sonlar ustida matematik amallar bajaradi. Ular dasturda hisob-kitob, o‘sish/kamayish va qoldiqni aniqlash uchun ishlatiladi.
+
+**Nima uchun shunday?**
+Bu operatorlar kompyuter arxitekturasida to‘g‘ridan-to‘g‘ri CPU tomonidan qo‘llab-quvvatlanadi. Masalan, `+` operatori ikkita sonni qo‘shadi, chunki bu arifmetik amal matematikada ham, kompyuterda ham bir xil natija beradi.
 
 | Operator | Ma'nosi         | Misol           | Natija |
 |----------|-----------------|-----------------|--------|
@@ -31,7 +41,14 @@ void main() {
 
 ---
 
+
 ## 2. Tenglik va Munosabat Operatorlari
+
+**Tavsif:**
+Bu operatorlar qiymatlarni solishtirish uchun ishlatiladi. Shartli ifodalarda, sikllarda va mantiqiy qarorlar qabul qilishda muhim rol o‘ynaydi.
+
+**Nima uchun shunday?**
+Kompyuterda har bir qiymat bitlar ko‘rinishida saqlanadi. Solishtirish operatorlari bu bitlarni taqqoslab, natijani `true` yoki `false` ko‘rinishida qaytaradi. Masalan, `==` operatori ikkita qiymat tengligini tekshiradi.
 
 | Operator | Ma'nosi           | Misol         | Natija |
 |----------|-------------------|--------------|--------|
@@ -55,7 +72,14 @@ void main() {
 
 ---
 
+
 ## 3. Sinov Turi Operatorlari
+
+**Tavsif:**
+`is` va `is!` operatorlari o‘zgaruvchining tipini tekshiradi. Bu operatorlar tip xavfsizligi va xatoliklarni oldini olish uchun ishlatiladi.
+
+**Nima uchun shunday?**
+Dart strongly typed til bo‘lgani uchun, har bir o‘zgaruvchining tipi muhim. `is` operatori tipni tekshiradi va natijani boolean ko‘rinishida qaytaradi. Bu, runtime’da xatoliklarni oldini olishga yordam beradi.
 
 | Operator | Ma'nosi         | Misol           | Natija |
 |----------|-----------------|-----------------|--------|
@@ -71,7 +95,14 @@ void main() {
 
 ---
 
+
 ## 4. Bitwise Operatorlar
+
+**Tavsif:**
+Bitwise operatorlar sonlarni bitlar darajasida boshqaradi. Ular asosan past darajadagi dasturlashda, masalan, flaglar, masklar va optimizatsiya uchun ishlatiladi.
+
+**Nima uchun shunday?**
+Kompyuterda har bir son bitlar to‘plami sifatida saqlanadi. Bitwise operatorlar bu bitlar ustida to‘g‘ridan-to‘g‘ri amallar bajaradi. Masalan, `&` operatori ikkala sonning faqat 1 bo‘lgan bitlarini saqlaydi.
 
 | Operator | Ma'nosi | Misol    | Natija |
 |----------|---------|----------|--------|
@@ -89,7 +120,14 @@ void main() {
 
 ---
 
+
 ## 5. Belgilash Operatorlari
+
+**Tavsif:**
+Belgilash operatorlari o‘zgaruvchiga qiymat berish va uni yangilash uchun ishlatiladi. Ular kodni qisqartirish va o‘qishni osonlashtirish uchun qulay.
+
+**Nima uchun shunday?**
+`a += 2` operatori aslida `a = a + 2` ga teng. Bu sintaksis kodni qisqa va aniq yozish uchun yaratilgan. Kompilyator buni avtomatik ravishda to‘g‘ri amalga aylantiradi.
 
 | Operator | Ma'nosi         | Misol         | Natija |
 |----------|-----------------|--------------|--------|
@@ -118,7 +156,14 @@ void main() {
 
 ---
 
+
 ## 6. Mantiqiy Operatorlar
+
+**Tavsif:**
+Mantiqiy operatorlar boolean qiymatlar ustida amallar bajaradi. Ular shartli ifodalarda, sikllarda va mantiqiy qarorlar qabul qilishda ishlatiladi.
+
+**Nima uchun shunday?**
+`&&` va `||` operatorlari mantiqiy algebra asosida ishlaydi. Masalan, `true && false` natijasi `false`, chunki AND faqat ikkala operand true bo‘lsa, true qaytaradi.
 
 | Operator | Ma'nosi | Misol           | Natija |
 |----------|---------|-----------------|--------|
@@ -136,7 +181,14 @@ void main() {
 
 ---
 
+
 ## 7. Shartli Ifodalar
+
+**Tavsif:**
+Shartli ifodalar biror shartga qarab turli natijalarni qaytaradi. Ular kodni qisqartirish va o‘qishni osonlashtirish uchun ishlatiladi.
+
+**Nima uchun shunday?**
+`condition ? expr1 : expr2` – bu ternary operator. U if-else blokini qisqa ko‘rinishda yozish imkonini beradi. `??` operatori esa null qiymatlarni boshqarish uchun ishlatiladi, bu Dart tilida null safety’ni ta’minlaydi.
 
 | Ifoda                  | Ma'nosi                                            | Misol                | Natija |
 |------------------------|----------------------------------------------------|----------------------|--------|
@@ -153,4 +205,8 @@ void main() {
 
 ---
 
-Barcha operatorlar va shartli ifodalar Dart tilida yuqoridagi misollar bilan ishlatiladi. Har bir operatorning vazifasi va natijasi jadvalda ko‘rsatilgan.
+
+---
+
+**Xulosa:**
+Dart operatorlari dasturda tez, aniq va xavfsiz amallar bajarish uchun yaratilgan. Har bir operatorning ishlash mexanizmi kompyuter arxitekturasi va tilning sintaksisiga asoslangan. Misollar va tavsiflar orqali operatorlarning vazifasi, natijasi va nima uchun shunday ishlashini to‘liq tushunishingiz mumkin.
