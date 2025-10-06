@@ -120,6 +120,38 @@ const PI = 3.1415;
 
 ---
 
+---
+
+## 4.4. `final` va `const` o‘rtasidagi farq
+
+Dartda `final` va `const` o‘zgaruvchilar qiymatini o‘zgartirib bo‘lmaydi, lekin ular orasida muhim farqlar bor:
+
+| Xususiyat      | `final`                              | `const`                                 |
+|----------------|--------------------------------------|-----------------------------------------|
+| O‘zgartirish   | Qiymat faqat bir marta beriladi      | Qiymat faqat bir marta beriladi         |
+| Belgilanishi   | `final ism = qiymat;`                | `const ism = qiymat;`                   |
+| Qachon aniqlanadi | Runtime (dastur ishlaganda)        | Compile-time (build paytida)            |
+| Dinamik qiymat | Ruxsat etiladi (masalan, DateTime)   | Faqat statik, o‘zgarmas qiymat bo‘lishi kerak |
+| Memory         | Har bir instance uchun alohida joy   | Barcha instance uchun bitta joy         |
+
+**Misollar:**
+
+```dart
+final vaqt = DateTime.now(); // Dastur ishga tushganda aniqlanadi
+const PI = 3.1415;           // Build paytida aniqlanadi
+```
+
+**Izoh:**  
+- `final` o‘zgaruvchiga qiymat dastur ishlaganda beriladi, lekin keyin o‘zgartirib bo‘lmaydi.
+- `const` o‘zgaruvchiga qiymat kod kompilyatsiya qilinayotgan paytda beriladi va faqat o‘zgarmas (statik) qiymat bo‘lishi kerak.
+- Agar obyektni bir necha joyda ishlatsangiz va u mutlaq o‘zgarmas bo‘lsa, `const` ishlatish optimal.
+
+**Qo‘llash holatlari:**  
+- `final` – runtime’da aniqlanadigan, lekin o‘zgarmas qiymatlar uchun.
+- `const` – compile-time’da aniqlanadigan, mutlaq o‘zgarmas qiymatlar uchun.
+
+---
+
 ## 5. O‘zgaruvchilarni Ishlatish Qoidalari
 
 - O‘zgaruvchini e’lon qilmasdan ishlatib bo‘lmaydi.
