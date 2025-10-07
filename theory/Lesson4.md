@@ -1,55 +1,56 @@
-# 🔁 Dart Loops — Full Deep Dive Documentation
+# Dart Loops — Full Deep Dive Documentation
 
-> 🧠 *“Master control flow, master performance.”*  
+> “Master control flow, master performance.”  
 > — Arber’s Dart Notes  
 
 ---
 
-## 🌐 Language / Til
-**[🇬🇧 English](#english-version) | [🇺🇿 O‘zbekcha](#o‘zbekcha-versiya)**
+## Language / Til
+**English | O‘zbekcha**  
+*Scroll down for your preferred language.*
 
 ---
 
-# 🇬🇧 English Version
+# English Version
 
-## 📘 Overview
+## Overview
 
-Loops are **core control structures** in Dart that allow repeating tasks efficiently.  
-They transform logic into **machine-level iteration** controlled by CPU jump and compare instructions.
-
----
-
-### 🧩 Quick Navigation
-
-- [How Loops Work Internally](#how-loops-work-internally)
-- [For Loop](#for-loop)
-- [For-In Loop](#for-in-loop)
-- [While Loop](#while-loop)
-- [Do-While Loop](#do-while-loop)
-- [Break Statement](#break-statement)
-- [Continue Statement](#continue-statement)
-- [Label with Break/Continue](#label-with-breakcontinue)
-- [CPU-Level View](#cpu-level-view)
-- [Summary Table](#summary-table)
-- [Visualization Diagram](#visualization-diagram)
+Loops are core control structures in Dart that allow repeating tasks efficiently.  
+They transform logic into machine-level iteration controlled by CPU jump and compare instructions.
 
 ---
 
-## ⚙️ How Loops Work Internally
+### Quick Navigation
 
-When Dart code runs, loops are converted by the Dart **VM** or **AOT compiler** into CPU instructions:
-
-1. **Initialization** → Store loop variable (register or stack)
-2. **Condition check** → CPU uses `CMP` instruction
-3. **Conditional branch** → Jump if false (`JGE`, `JNE`)
-4. **Body execution**
-5. **Increment and jump back**
-
-🧬 **At machine level**, loops are just smartly arranged **jump (JMP)** and **compare (CMP)** instructions executed repeatedly.
+- How Loops Work Internally
+- For Loop
+- For-In Loop
+- While Loop
+- Do-While Loop
+- Break Statement
+- Continue Statement
+- Label with Break/Continue
+- CPU-Level View
+- Summary Table
+- Visualization Diagram
 
 ---
 
-## 🔂 For Loop
+## How Loops Work Internally
+
+When Dart code runs, loops are converted by the Dart VM or AOT compiler into CPU instructions:
+
+1. Initialization → Store loop variable (register or stack)
+2. Condition check → CPU uses `CMP` instruction
+3. Conditional branch → Jump if false (`JGE`, `JNE`)
+4. Body execution
+5. Increment and jump back
+
+At machine level, loops are just smartly arranged jump (`JMP`) and compare (`CMP`) instructions executed repeatedly.
+
+---
+
+## For Loop
 
 ```dart
 for (var i = 0; i < 5; i++) {
@@ -57,14 +58,14 @@ for (var i = 0; i < 5; i++) {
 }
 ```
 
-**Logic:**
+Logic:
 - Initialize → i = 0
 - Condition → i < 5
 - Execute → print
 - Increment → i++
 - Repeat until condition is false
 
-**CPU Equivalent:**
+CPU Equivalent:
 ```
 MOV i, 0
 loop_start:
@@ -76,13 +77,13 @@ JMP loop_start
 loop_end:
 ```
 
-**Use When:**
+Use When:
 - You know the exact number of iterations
 - You need full control of counter
 
 ---
 
-## 🌀 For-In Loop
+## For-In Loop
 
 ```dart
 var list = ['A', 'B', 'C'];
@@ -91,19 +92,19 @@ for (var item in list) {
 }
 ```
 
-**Logic:**
+Logic:
 - Uses Dart’s Iterator API under the hood
 
-**Internals:**
+Internals:
 - `Iterator.moveNext()` and `Iterator.current` are method calls.
 - Slight overhead, but more expressive.
 
-**Use When:**
+Use When:
 - Working with List, Set, Map, or any Iterable.
 
 ---
 
-## ♾️ While Loop
+## While Loop
 
 ```dart
 var i = 0;
@@ -113,16 +114,16 @@ while (i < 3) {
 }
 ```
 
-**Logic:**
+Logic:
 - Condition is checked before each iteration.
 - May not execute at all if condition false initially.
 
-**Use When:**
+Use When:
 - You don’t know how many times to loop (e.g., reading user input).
 
 ---
 
-## 🔁 Do-While Loop
+## Do-While Loop
 
 ```dart
 var i = 0;
@@ -132,15 +133,15 @@ do {
 } while (i < 3);
 ```
 
-**Logic:**
+Logic:
 - Executes at least once, because condition is checked after the loop body.
 
-**Use When:**
+Use When:
 - You need body to run once before condition check.
 
 ---
 
-## ⛔ Break Statement
+## Break Statement
 
 ```dart
 for (var i = 0; i < 10; i++) {
@@ -149,15 +150,15 @@ for (var i = 0; i < 10; i++) {
 }
 ```
 
-**Logic:**
+Logic:
 - Immediately exits loop when condition met.
 
-**Use When:**
+Use When:
 - Early termination is needed.
 
 ---
 
-## ➡️ Continue Statement
+## Continue Statement
 
 ```dart
 for (var i = 0; i < 10; i++) {
@@ -166,15 +167,15 @@ for (var i = 0; i < 10; i++) {
 }
 ```
 
-**Logic:**
+Logic:
 - Skips current iteration, moves to next check.
 
-**Use When:**
+Use When:
 - You want to skip certain values but continue looping.
 
 ---
 
-## 🏷️ Label with Break/Continue
+## Label with Break/Continue
 
 ```dart
 outer:
@@ -186,16 +187,16 @@ for (var i = 0; i < 3; i++) {
 }
 ```
 
-**Logic:**
+Logic:
 - Labels let you control nested loops directly.
 - `break outer` exits from the labeled loop.
 
-**Use When:**
+Use When:
 - Handling nested loop exits.
 
 ---
 
-## 🧮 CPU-Level View
+## CPU-Level View
 
 | Dart Operation | CPU Equivalent | Description         |
 |:--------------:|:--------------:|:-------------------|
@@ -207,21 +208,21 @@ for (var i = 0; i < 3; i++) {
 
 ---
 
-## 📊 Summary Table
+## Summary Table
 
 | Loop Type   | Condition Position | Runs Once? | Common Use      | Performance |
 |-------------|-------------------|------------|-----------------|-------------|
-| for         | Before            | ❌         | Known count     | Fastest     |
-| for-in      | Hidden            | ❌         | Collections     | Medium      |
-| while       | Before            | ❌         | Condition-based | Fast        |
-| do-while    | After             | ✅         | At least once   | Fast        |
+| for         | Before            | No         | Known count     | Fastest     |
+| for-in      | Hidden            | No         | Collections     | Medium      |
+| while       | Before            | No         | Condition-based | Fast        |
+| do-while    | After             | Yes        | At least once   | Fast        |
 | break       | —                 | —          | Exit loop       | Immediate   |
 | continue    | —                 | —          | Skip iteration  | Controlled  |
 | label       | —                 | —          | Nested control  | Scoped      |
 
 ---
 
-## 🧭 Visualization Diagram
+## Visualization Diagram
 
 ```
 ┌───────────────┐
@@ -237,20 +238,20 @@ for (var i = 0; i < 3; i++) {
    Exit Loop
 ```
 
-💬 *A loop is not just repetition — it’s the heartbeat of the CPU.*
+A loop is not just repetition — it’s the heartbeat of the CPU.
 
 ---
 
-# 🇺🇿 O‘zbekcha Versiya
+# O‘zbekcha Versiya
 
-## 📘 Umumiy tushuncha
+## Umumiy tushuncha
 
 Loop — bu takroriy bajariladigan kod bo‘lib, shart to‘g‘ri bo‘lganicha kodni qayta-qayta ishlaydi.  
 Dart’da bu kodlar VM yoki AOT kompilyator orqali CPU buyruqlariga (JMP, CMP, INC) aylanadi.
 
 ---
 
-## ⚙️ Loop ichki ishlashi
+## Loop ichki ishlashi
 
 1. Boshlanish (i=0)
 2. Shart tekshiruvi (i<5)
@@ -263,7 +264,7 @@ CPU darajasida bu shunchaki:
 
 ---
 
-## 🔂 For Loop
+## For Loop
 
 ```dart
 for (var i = 0; i < 5; i++) {
@@ -288,7 +289,7 @@ END:
 
 ---
 
-## 🌀 For-In Loop
+## For-In Loop
 
 ```dart
 var list = ['A', 'B', 'C'];
@@ -308,7 +309,7 @@ while (it.moveNext()) {
 
 ---
 
-## ♾️ While Loop
+## While Loop
 
 ```dart
 var i = 0;
@@ -323,7 +324,7 @@ while (i < 3) {
 
 ---
 
-## 🔁 Do-While Loop
+## Do-While Loop
 
 ```dart
 var i = 0;
@@ -338,7 +339,7 @@ do {
 
 ---
 
-## ⛔ Break
+## Break
 
 ```dart
 for (var i = 0; i < 10; i++) {
@@ -352,7 +353,7 @@ for (var i = 0; i < 10; i++) {
 
 ---
 
-## ➡️ Continue
+## Continue
 
 ```dart
 for (var i = 0; i < 10; i++) {
@@ -365,7 +366,7 @@ for (var i = 0; i < 10; i++) {
 
 ---
 
-## 🏷️ Label bilan Break
+## Label bilan Break
 
 ```dart
 outer:
@@ -381,7 +382,7 @@ for (var i = 0; i < 3; i++) {
 
 ---
 
-## ⚙️ CPU darajasida
+## CPU darajasida
 
 | Dart amali | CPU buyrug‘i | Tushuntirish         |
 |:----------:|:------------:|:--------------------:|
@@ -393,7 +394,7 @@ for (var i = 0; i < 3; i++) {
 
 ---
 
-## 🖥️ Diagram
+## Diagram
 
 ```
      ┌───────────────┐
@@ -408,6 +409,4 @@ for (var i = 0; i < 3; i++) {
          Loop tugaydi
 ```
 
----
-
-💡 *Loop — bu CPUning yurak urishidir: har zarbda mantiq ishlaydi.*
+Loop — bu CPUning yurak urishidir: har zarbda mantiq ishlaydi.
