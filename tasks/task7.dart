@@ -1,12 +1,3 @@
-// Masala1
-/* Task1 agar berilgan son 11 ning ko`paytmasidan 1 yoki 2 ga ortiq bo`lsa true qiymatni Console da chiqaring.
- */
-// void main() {
-//   var son = 23;
-//   var natija = son%11==1 || son%11==2;
-//   print(natija);
-// }
-
 // Masala2
 
 // void main() {

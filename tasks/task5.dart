@@ -13,7 +13,7 @@ qiymatni Console da chiqaring.
 
 /*
 
- Task2: Manfiy bo`lmagan “num” raqami 
+Task2: Manfiy bo`lmagan “num” raqami 
 berilgan, agar son 10 ga qoldiqsiz bo`linuvchi 
 sonlarga ko`pi bilan 2 tagacha farq qilsa true 
 qiymatni Console da chiqaring */
