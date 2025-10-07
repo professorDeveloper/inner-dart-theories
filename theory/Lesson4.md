@@ -1,17 +1,22 @@
 # Dart Loops — Full Deep Dive Documentation
 
 > “Master control flow, master performance.”  
-> — Arber’s Dart Notes  
+> — Azamov’s Dart Notes  
 
 ---
 
 ## Language / Til
-**English | O‘zbekcha**  
-*Scroll down for your preferred language.*
+
+**Choose your language:**
+
+- [English](#english-version)
+- [O‘zbekcha](#uzbek-version)
 
 ---
 
 # English Version
+
+<a name="english-version"></a>
 
 ## Overview
 
@@ -22,17 +27,17 @@ They transform logic into machine-level iteration controlled by CPU jump and com
 
 ### Quick Navigation
 
-- How Loops Work Internally
-- For Loop
-- For-In Loop
-- While Loop
-- Do-While Loop
-- Break Statement
-- Continue Statement
-- Label with Break/Continue
-- CPU-Level View
-- Summary Table
-- Visualization Diagram
+- [How Loops Work Internally](#how-loops-work-internally)
+- [For Loop](#for-loop)
+- [For-In Loop](#for-in-loop)
+- [While Loop](#while-loop)
+- [Do-While Loop](#do-while-loop)
+- [Break Statement](#break-statement)
+- [Continue Statement](#continue-statement)
+- [Label with Break/Continue](#label-with-breakcontinue)
+- [CPU-Level View](#cpu-level-view)
+- [Summary Table](#summary-table)
+- [Visualization Diagram](#visualization-diagram)
 
 ---
 
@@ -242,7 +247,9 @@ A loop is not just repetition — it’s the heartbeat of the CPU.
 
 ---
 
-# O‘zbekcha Versiya
+# uzbek-version
+
+<a name="uzbek-version"></a>
 
 ## Umumiy tushuncha
 
