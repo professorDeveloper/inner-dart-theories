@@ -28,7 +28,7 @@ Quyidagi diagramma shartli operatorlar (if/else) qanday ishlashini ko‘rsatadi:
 
 `if` operatori shartni tekshiradi va shart to‘g‘ri bo‘lsa kodni bajaradi.
 
-**Misol:**
+**Sintaksis va misol:**
 ```dart
 int yosh = 18;
 if (yosh >= 18) {
@@ -43,7 +43,7 @@ Yuqoridagi misolda, agar `yosh` 18 yoki undan katta bo‘lsa, "Balog‘atga yetg
 
 `if else` operatori shart to‘g‘ri bo‘lmasa boshqa kodni bajaradi.
 
-**Misol:**
+**Sintaksis va misol:**
 ```dart
 int ball = 65;
 if (ball >= 70) {
@@ -59,7 +59,7 @@ if (ball >= 70) {
 
 Bir nechta shartlarni ketma-ket tekshirish uchun ishlatiladi.
 
-**Misol:**
+**Sintaksis va misol:**
 ```dart
 int baho = 4;
 if (baho == 5) {
@@ -79,7 +79,7 @@ if (baho == 5) {
 
 `if` ichida yana `if` ishlatish mumkin.
 
-**Misol:**
+**Sintaksis va misol:**
 ```dart
 int yosh = 20;
 bool passportBor = true;
@@ -93,12 +93,9 @@ if (yosh >= 18) {
   print('Yosh yetarli emas');
 }
 ```
-
----
-
 ## SWITCH
 
-`switch` operatori biror o‘zgaruvchining qiymatiga qarab bir nechta variantdan birini bajaradi. Ko‘p holatda bir xil shartlarni ko‘p marta tekshirishda qulay.
+`switch` operatori biror o‘zgaruvchining qiymatiga qarab bir nechta variantdan birini bajaradi. Bu operator ko‘p shartlarni ketma-ket if/else bilan yozishdan ko‘ra ancha qulay va o‘qilishi oson.
 
 **Sintaksis:**
 ```dart
@@ -114,22 +111,58 @@ switch (qiymat) {
 }
 ```
 
+**Tushuntirish:**
+- `switch` ichida har bir `case` bir qiymatni tekshiradi.
+- Agar qiymat mos kelsa, shu case ichidagi kod bajariladi.
+- `break` operatori case tugagandan so‘ng switch blokidan chiqib ketadi. Agar break yozilmasa, keyingi case ham bajariladi (bu "fall-through" deb ataladi).
+- `default` esa hech bir case mos kelmasa ishlaydi.
+
 **Misol:**
 ```dart
-String kun = 'shanba';
-switch (kun) {
-  case 'dushanba':
-    print('Hafta boshlandi');
+int day = 3;
+switch (day) {
+  case 1:
+    print('Dushanba');
     break;
-  case 'shanba':
-    print('Dam olish kuni');
+  case 2:
+    print('Seshanba');
+    break;
+  case 3:
+    print('Chorshanba');
     break;
   default:
-    print('Oddiy kun');
+    print('Boshqa kun');
 }
 ```
-**Izoh:**  
-`break` har bir case dan keyin yoziladi, aks holda keyingi case ham bajariladi. `default` esa hech bir case mos kelmasa ishlaydi.
+Yuqoridagi misolda, `day` 3 bo‘lsa, "Chorshanba" chiqadi.
+
+**break haqida chuqurroq:**
+- Agar break yozilmasa, switch keyingi case’larni ham bajaradi:
+```dart
+int day = 2;
+switch (day) {
+  case 2:
+    print('Seshanba');
+    // break yo‘q!
+  case 3:
+    print('Chorshanba');
+    break;
+}
+```
+Natija:
+```
+Seshanba
+Chorshanba
+```
+- Shuning uchun har bir case oxirida break yozish tavsiya etiladi.
+
+**default case:**
+- default case har doim oxirida bo‘lishi shart emas, lekin odatda oxirida yoziladi.
+- default case switch ichida hech bir case mos kelmasa bajariladi.
+
+**Switch operatori qachon ishlatiladi?**
+- Biror o‘zgaruvchining bir nechta aniq qiymatlari bo‘lsa va har bir qiymat uchun alohida kod bajarilishi kerak bo‘lsa.
+- Masalan, menyu tanlash, kun nomlari, status kodlar va boshqalar.
 
 ---
 
