@@ -1,16 +1,282 @@
+# Dart Operators: Comprehensive Guide, Description, and Explanation
 
-# Dart Operatorlari: To'liq Qo'llanma, Tavsif va Isbot
 
-Dart tilida operatorlar – bu o‘zgaruvchilar va qiymatlar ustida amallar bajarish uchun ishlatiladigan maxsus belgilar yoki ifodalar. Har bir operatorning maqsadi, ishlash mexanizmi va natijasi bor. Quyida har bir operator turi bo‘yicha qisqacha tavsif, misollar va nima uchun shunday ishlashini izoh bilan ko‘rib chiqamiz.
+> — Azamov’s Dart Notes
+---
 
+
+## Language Selection
+Choose a language to view the content:
+
+- [English](#english-version)
+- [Uzbek](#uzbek-version)
+
+
+## English Version
+
+<a name="english-version"></a>
+
+## Quick List: Operator Types
+- [Arithmetic Operators](#1-arithmetic-operators)
+- [Equality and Relational Operators](#2-equality-and-relational-operators)
+- [Type Test Operators](#3-type-test-operators)
+- [Bitwise Operators](#4-bitwise-operators)
+- [Assignment Operators](#5-assignment-operators)
+- [Logical Operators](#6-logical-operators)
+- [Conditional Expressions](#7-conditional-expressions)
+- [Additional Operators](#8-additional-operators)
+
+---
+
+## 1. Arithmetic Operators
+
+**Description:**  
+Arithmetic operators perform mathematical operations on numbers. They are used for calculations, increment/decrement, and finding remainders.
+
+**Why it works this way?**  
+These operators are directly supported by the CPU in computer architecture. For example, the `+` operator adds two numbers, producing consistent results in both mathematics and computing.
+
+| Operator | Description     | Example         | Result |
+|----------|-----------------|-----------------|--------|
+| +        | Addition        | 2 + 3           | 5      |
+| -        | Subtraction     | 5 - 2           | 3      |
+| *        | Multiplication  | 4 * 2           | 8      |
+| /        | Division        | 6 / 2           | 3.0    |
+| ~/       | Integer Division| 7 ~/ 2          | 3      |
+| %        | Modulus         | 7 % 2           | 1      |
+| ++       | Increment       | var a = 5; a++  | 6      |
+| --       | Decrement       | var b = 5; b--  | 4      |
+
+```dart
+void main() {
+  int a = 7;
+  print(a + 2); // 9
+  print(a - 3); // 4
+  print(a * 2); // 14
+  print(a / 2); // 3.5
+  print(a ~/ 2); // 3
+  print(a % 2); // 1
+  a++;
+  print(a); // 8
+  a--;
+  print(a); // 7
+}
+```
+
+---
+
+## 2. Equality and Relational Operators
+
+**Description:**  
+These operators compare values and are used in conditional statements, loops, and logical decision-making.
+
+**Why it works this way?**  
+Values are stored as bits in a computer. Comparison operators evaluate these bits and return `true` or `false`.
+
+| Operator | Description       | Example       | Result |
+|----------|-------------------|--------------|--------|
+| >        | Greater than      | 5 > 3        | true   |
+| <        | Less than         | 2 < 4        | true   |
+| >=       | Greater or equal  | 5 >= 5       | true   |
+| <=       | Less or equal     | 3 <= 2       | false  |
+| ==       | Equal             | 2 == 2       | true   |
+| !=       | Not equal         | 2 != 3       | true   |
+
+```dart
+void main() {
+  print(5 > 3); // true
+  print(2 < 4); // true
+  print(5 >= 5); // true
+  print(3 <= 2); // false
+  print(2 == 2); // true
+  print(2 != 3); // true
+}
+```
+
+---
+
+## 3. Type Test Operators
+
+**Description:**  
+The `is` and `is!` operators check a variable's type, ensuring type safety and preventing errors.
+
+**Why it works this way?**  
+Dart is a strongly typed language, and type checking is critical. The `is` operator verifies the type and returns a boolean result.
+
+| Operator | Description      | Example           | Result |
+|----------|------------------|-------------------|--------|
+| is       | Type check       | 'hello' is String | true   |
+| is!      | Not type check   | 5 is! String      | true   |
+
+```dart
+void main() {
+  print('hello' is String); // true
+  print(5 is! String); // true
+}
+```
+
+---
+
+## 4. Bitwise Operators
+
+**Description:**  
+Bitwise operators manipulate numbers at the bit level (0s and 1s). They are used in low-level programming, flags, masks, and optimization.
+
+**Why it works this way?**  
+Computer memory and processors work with bits. Bitwise operators allow efficient data manipulation and memory optimization.
+
+| Operator | Description | Example  | Binary Operation | Result |
+|----------|-------------|----------|------------------|--------|
+| &        | AND         | 5 & 3    | 101 & 011        | 001 (1)|
+| |        | OR          | 5 | 3    | 101 | 011        | 111 (7)|
+| ^        | XOR         | 5 ^ 3    | 101 ^ 011        | 110 (6)|
+
+```dart
+void main() {
+  print(5 & 3); // 1, because: 101 & 011 = 001
+  print(5 | 3); // 7, because: 101 | 011 = 111
+  print(5 ^ 3); // 6, because: 101 ^ 011 = 110
+}
+```
+
+**Additional Questions:**  
+- **Why use bitwise operators?** For memory efficiency, flag management, and hardware interaction.  
+- **When to use them?** In low-level programming, optimization, and hardware interfaces.
+
+---
+
+## 5. Assignment Operators
+
+**Description:**  
+Assignment operators assign or update variable values, making code concise and readable.
+
+**Why it works this way?**  
+`a += 2` is equivalent to `a = a + 2`. This syntax simplifies code writing and improves clarity.
+
+| Operator | Description         | Example       | Result |
+|----------|---------------------|--------------|--------|
+| =        | Assignment          | a = 5        | 5      |
+| +=       | Add and assign      | a += 2       | 7      |
+| -=       | Subtract and assign | a -= 3       | 4      |
+| *=       | Multiply and assign | a *= 2       | 8      |
+| /=       | Divide and assign   | a /= 2       | 4.0    |
+| %=       | Modulus and assign  | a %= 3       | 1      |
+
+```dart
+void main() {
+  int a = 5;
+  a += 2;
+  print(a); // 7
+  a *= 2;
+  print(a); // 14
+  a /= 2;
+  print(a); // 7.0
+  a %= 3;
+  print(a); // 1
+}
+```
+
+---
+
+## 6. Logical Operators
+
+**Description:**  
+Logical operators perform operations on boolean values, used in conditional statements and logical decisions.
+
+**Why it works this way?**  
+`&&` and `||` follow boolean algebra. For example, `true && false` results in `false` because AND requires both operands to be true.
+
+| Operator | Description | Example           | Result |
+|----------|-------------|-------------------|--------|
+| &&       | AND         | true && false     | false  |
+| ||       | OR          | true || false     | true   |
+| !        | NOT         | !true             | false  |
+
+```dart
+void main() {
+  print(true && false); // false
+  print(true || false); // true
+  print(!true); // false
+}
+```
+
+---
+
+## 7. Conditional Expressions
+
+**Description:**  
+Conditional expressions return results based on conditions, simplifying code and handling null values.
+
+**Why it works this way?**  
+The `condition ? expr1 : expr2` (ternary operator) provides a concise alternative to if-else blocks. The `??` operator supports Dart’s null safety feature.
+
+| Expression             | Description                                        | Example                | Result    |
+|------------------------|----------------------------------------------------|-----------------------|-----------|
+| condition ? expr1 : expr2 | If condition is true, return expr1, else expr2 | 5 > 3 ? 'big' : 'small' | 'big'     |
+| expr1 ?? expr2         | If expr1 is not null, return expr1, else expr2 | null ?? 'default'     | 'default' |
+
+```dart
+void main() {
+  print(5 > 3 ? 'big' : 'small'); // 'big'
+  String? name;
+  print(name ?? 'default'); // 'default'
+}
+```
+
+---
+
+## 8. Additional Operators
+
+**Description:**  
+Dart includes special operators like null-aware (`?.`), cascade notation (`..`), and others to make code more flexible and concise.
+
+| Operator | Description              | Example                     | Result         |
+|----------|--------------------------|-----------------------------|----------------|
+| ?.       | Null-aware              | obj?.method()               | null or result |
+| ..       | Cascade notation        | obj..x = 5..y = 10         | obj            |
+| []       | Index operator          | list[0]                    | First element  |
+| ()       | Function call           | function()                 | Result         |
+
+```dart
+void main() {
+  // Null-aware operator
+  String? name;
+  print(name?.length); // null
+
+  // Cascade notation
+  var list = []
+    ..add(1)
+    ..add(2);
+  print(list); // [1, 2]
+
+  // Index operator
+  print(list[0]); // 1
+}
+```
+
+
+---
+# Uzbek-version
+
+<a name="uzbek-version"></a>
+
+## Operatorlar ro‘yxati
+- [Arifmetik Operatorlar](#1-arifmetik-operatorlar)
+- [Tenglik va Munosabat Operatorlari](#2-tenglik-va-munosabat-operatorlari)
+- [Sinov Turi Operatorlari](#3-sinov-turi-operatorlari)
+- [Bitwise Operatorlar](#4-bitwise-operatorlar)
+- [Belgilash Operatorlari](#5-belgilash-operatorlari)
+- [Mantiqiy Operatorlar](#6-mantiqiy-operatorlar)
+- [Shartli Ifodalar](#7-shartli-ifodalar)
+- [Qo‘shimcha Operatorlar](#8-qo‘shimcha-operatorlar)
 
 ## 1. Arifmetik Operatorlar
 
-**Tavsif:**
-Arifmetik operatorlar sonlar ustida matematik amallar bajaradi. Ular dasturda hisob-kitob, o‘sish/kamayish va qoldiqni aniqlash uchun ishlatiladi.
+**Tavsif:**  
+Arifmetik operatorlar sonlar ustida matematik amallar bajaradi. Ular hisob-kitob, o‘sish/kamayish va qoldiqni aniqlashda ishlatiladi.
 
-**Nima uchun shunday?**
-Bu operatorlar kompyuter arxitekturasida to‘g‘ridan-to‘g‘ri CPU tomonidan qo‘llab-quvvatlanadi. Masalan, `+` operatori ikkita sonni qo‘shadi, chunki bu arifmetik amal matematikada ham, kompyuterda ham bir xil natija beradi.
+**Nima uchun shunday?**  
+Bu operatorlar kompyuter arxitekturasida to‘g‘ridan-to‘g‘ri CPU tomonidan qo‘llab-quvvatlanadi. Masalan, `+` operatori ikkita sonni qo‘shadi, bu matematikada ham, kompyuterda ham bir xil natija beradi.
 
 | Operator | Ma'nosi         | Misol           | Natija |
 |----------|-----------------|-----------------|--------|
@@ -41,14 +307,13 @@ void main() {
 
 ---
 
-
 ## 2. Tenglik va Munosabat Operatorlari
 
-**Tavsif:**
+**Tavsif:**  
 Bu operatorlar qiymatlarni solishtirish uchun ishlatiladi. Shartli ifodalarda, sikllarda va mantiqiy qarorlar qabul qilishda muhim rol o‘ynaydi.
 
-**Nima uchun shunday?**
-Kompyuterda har bir qiymat bitlar ko‘rinishida saqlanadi. Solishtirish operatorlari bu bitlarni taqqoslab, natijani `true` yoki `false` ko‘rinishida qaytaradi. Masalan, `==` operatori ikkita qiymat tengligini tekshiradi.
+**Nima uchun shunday?**  
+Kompyuterda har bir qiymat bitlar ko‘rinishida saqlanadi. Solishtirish operatorlari bu bitlarni taqqoslab, natijani `true` yoki `false` ko‘rinishida qaytaradi.
 
 | Operator | Ma'nosi           | Misol         | Natija |
 |----------|-------------------|--------------|--------|
@@ -72,14 +337,13 @@ void main() {
 
 ---
 
-
 ## 3. Sinov Turi Operatorlari
 
-**Tavsif:**
-`is` va `is!` operatorlari o‘zgaruvchining tipini tekshiradi. Bu operatorlar tip xavfsizligi va xatoliklarni oldini olish uchun ishlatiladi.
+**Tavsif:**  
+`is` va `is!` operatorlari o‘zgaruvchining tipini tekshiradi. Tip xavfsizligi va xatolarni oldini olishda ishlatiladi.
 
-**Nima uchun shunday?**
-Dart strongly typed til bo‘lgani uchun, har bir o‘zgaruvchining tipi muhim. `is` operatori tipni tekshiradi va natijani boolean ko‘rinishida qaytaradi. Bu, runtime’da xatoliklarni oldini olishga yordam beradi.
+**Nima uchun shunday?**  
+Dart strongly typed til bo‘lib, har bir o‘zgaruvchining tipi muhim. `is` operatori tipni tekshiradi va natijani boolean ko‘rinishida qaytaradi.
 
 | Operator | Ma'nosi         | Misol           | Natija |
 |----------|-----------------|-----------------|--------|
@@ -95,26 +359,20 @@ void main() {
 
 ---
 
-
 ## 4. Bitwise Operatorlar
 
-**Tavsif:**
-Bitwise operatorlar sonlarni bitlar (0 va 1) darajasida boshqaradi. Ular past darajadagi dasturlashda, flaglar, masklar, optimizatsiya va apparat bilan ishlashda keng qo‘llaniladi.
+**Tavsif:**  
+Bitwise operatorlar sonlarni bitlar (0 va 1) darajasida boshqaradi. Past darajadagi dasturlashda, flaglar, masklar va optimizatsiyada keng qo‘llaniladi.
 
-**Nega kerak?**
-Kompyuter xotirasi va protsessor faqat 0 va 1 (bitlar) bilan ishlaydi. Bitwise operatorlar yordamida ma’lumotlarni tez va samarali boshqarish, xotirani tejash, apparat resurslarini to‘g‘ri taqsimlash mumkin. Masalan, bir nechta flaglarni bitta butun son ichida saqlash va boshqarish uchun bitwise operatorlar ishlatiladi.
+**Nima uchun shunday?**  
+Kompyuter xotirasi va protsessor faqat bitlar bilan ishlaydi. Bitwise operatorlar yordamida ma’lumotlarni tez va samarali boshqarish, xotirani tejash mumkin.
 
-**Nima uchun natija 2 lik sanoq sistemada bo‘ladi?**
-Har bir son kompyuterda 2 lik sanoq sistemada (binary) saqlanadi. Masalan, 5 = 101, 3 = 011. Bitwise operatorlar har bir bitni alohida solishtiradi yoki o‘zgartiradi. Natija ham binary ko‘rinishda hosil bo‘ladi, lekin ekranga decimal (10 lik) ko‘rinishda chiqadi.
-
-**Bitwise operatorlar qanday ishlaydi?**
 | Operator | Ma'nosi | Misol    | Binary amal | Natija |
 |----------|---------|----------|-------------|--------|
 | &        | AND     | 5 & 3    | 101 & 011   | 001 (1)|
 | |        | OR      | 5 | 3    | 101 | 011   | 111 (7)|
 | ^        | XOR     | 5 ^ 3    | 101 ^ 011   | 110 (6)|
 
-**Misollar va izoh:**
 ```dart
 void main() {
   print(5 & 3); // 1, chunki: 101 & 011 = 001
@@ -123,27 +381,19 @@ void main() {
 }
 ```
 
-**Savol-javob:**
-- Nega bitwise operatorlar qo‘shilgan?
-  - Dasturda xotirani tejash, flaglarni boshqarish, apparat bilan to‘g‘ridan-to‘g‘ri ishlash va tezlik uchun.
-- Nega natija binary bo‘ladi?
-  - Kompyuterda barcha sonlar binary ko‘rinishda saqlanadi va bitwise operatorlar har bir bitni alohida boshqaradi.
-- Qachon ishlatish kerak?
-  - Flaglar, masklar, apparat interfeyslari, optimizatsiya va past darajadagi amallarda.
+**Qo‘shimcha Savollar:**  
+- **Nega bitwise operatorlar kerak?** Xotirani tejash, flaglarni boshqarish va apparat bilan ishlash uchun.  
+- **Qachon ishlatiladi?** Past darajadagi dasturlash, optimizatsiya va apparat interfeyslari.  
 
-**Qo‘shimcha:**
-Bitwise operatorlar dasturda murakkab va tez ishlovchi algoritmlar yaratishda juda foydali. Ular yordamida bir nechta boolean qiymatlarni bitta integerda saqlash, apparat resurslarini boshqarish va xotirani tejash mumkin.
-
-----
-
+---
 
 ## 5. Belgilash Operatorlari
 
-**Tavsif:**
-Belgilash operatorlari o‘zgaruvchiga qiymat berish va uni yangilash uchun ishlatiladi. Ular kodni qisqartirish va o‘qishni osonlashtirish uchun qulay.
+**Tavsif:**  
+Belgilash operatorlari o‘zgaruvchiga qiymat berish va uni yangilashda ishlatiladi. Kodni qisqartirish va o‘qishni osonlashtirish uchun qulay.
 
-**Nima uchun shunday?**
-`a += 2` operatori aslida `a = a + 2` ga teng. Bu sintaksis kodni qisqa va aniq yozish uchun yaratilgan. Kompilyator buni avtomatik ravishda to‘g‘ri amalga aylantiradi.
+**Nima uchun shunday?**  
+`a += 2` operatori `a = a + 2` ga teng. Bu sintaksis kodni aniq va qisqa yozish uchun yaratilgan.
 
 | Operator | Ma'nosi         | Misol         | Natija |
 |----------|-----------------|--------------|--------|
@@ -160,9 +410,9 @@ void main() {
   a += 2;
   print(a); // 7
   a *= 2;
-  print(a); // 8
+  print(a); // 14
   a /= 2;
-  print(a); // 4.0
+  print(a); // 7.0
   a %= 3;
   print(a); // 1
 }
@@ -170,13 +420,12 @@ void main() {
 
 ---
 
-
 ## 6. Mantiqiy Operatorlar
 
-**Tavsif:**
-Mantiqiy operatorlar boolean qiymatlar ustida amallar bajaradi. Ular shartli ifodalarda, sikllarda va mantiqiy qarorlar qabul qilishda ishlatiladi.
+**Tavsif:**  
+Mantiqiy operatorlar boolean qiymatlar ustida amallar bajaradi. Shartli ifodalarda va mantiqiy qarorlarda ishlatiladi.
 
-**Nima uchun shunday?**
+**Nima uchun shunday?**  
 `&&` va `||` operatorlari mantiqiy algebra asosida ishlaydi. Masalan, `true && false` natijasi `false`, chunki AND faqat ikkala operand true bo‘lsa, true qaytaradi.
 
 | Operator | Ma'nosi | Misol           | Natija |
@@ -195,14 +444,13 @@ void main() {
 
 ---
 
-
 ## 7. Shartli Ifodalar
 
-**Tavsif:**
-Shartli ifodalar biror shartga qarab turli natijalarni qaytaradi. Ular kodni qisqartirish va o‘qishni osonlashtirish uchun ishlatiladi.
+**Tavsif:**  
+Shartli ifodalar shartga qarab turli natijalarni qaytaradi. Kodni qisqartirish va null qiymatlarni boshqarishda ishlatiladi.
 
-**Nima uchun shunday?**
-`condition ? expr1 : expr2` – bu ternary operator. U if-else blokini qisqa ko‘rinishda yozish imkonini beradi. `??` operatori esa null qiymatlarni boshqarish uchun ishlatiladi, bu Dart tilida null safety’ni ta’minlaydi.
+**Nima uchun shunday?**  
+`condition ? expr1 : expr2` (ternary operator) if-else blokini qisqa ko‘rinishda yozish imkonini beradi. `??` operatori Dart’ning null safety xususiyatini ta’minlaydi.
 
 | Ifoda                  | Ma'nosi                                            | Misol                | Natija |
 |------------------------|----------------------------------------------------|----------------------|--------|
@@ -219,8 +467,39 @@ void main() {
 
 ---
 
+## 8. Qo‘shimcha Operatorlar
 
----
+**Tavsif:**  
+Dart tilida maxsus operatorlar, masalan, null-aware (`?.`), kaskad notatsiyasi (`..`) va boshqalar mavjud. Ular kodni yanada moslashuvchan va qisqa qiladi.
 
-**Xulosa:**
-Dart operatorlari dasturda tez, aniq va xavfsiz amallar bajarish uchun yaratilgan. Har bir operatorning ishlash mexanizmi kompyuter arxitekturasi va tilning sintaksisiga asoslangan. Misollar va tavsiflar orqali operatorlarning vazifasi, natijasi va nima uchun shunday ishlashini to‘liq tushunishingiz mumkin.
+| Operator | Ma'nosi                  | Misol                       | Natija         |
+|----------|--------------------------|-----------------------------|----------------|
+| ?.       | Null-aware               | obj?.method()               | null yoki natija |
+| ..       | Kaskad notatsiyasi       | obj..x = 5..y = 10         | obj            |
+| []       | Indeks operator          | list[0]                    | Birinchi element |
+| ()       | Funksiya chaqirish       | function()                 | Natija         |
+
+```dart
+void main() {
+  // Null-aware operator
+  String? name;
+  print(name?.length); // null
+
+  // Kaskad notatsiyasi
+  var list = []
+    ..add(1)
+    ..add(2);
+  print(list); // [1, 2]
+
+  // Indeks operator
+  print(list[0]); // 1
+}
+```
+
+
+## Conclusion
+Dart operators are designed for fast, precise, and safe operations. Their mechanisms are rooted in computer architecture and Dart’s syntax. Through examples and explanations, you can fully understand their purpose, results, and why they work the way they do.
+
+**Additional Resources:**
+- [Official Dart Documentation](https://dart.dev/guides/language/language-tour#operators)
+- [DartPad](https://dartpad.dev) – Try Dart code online.

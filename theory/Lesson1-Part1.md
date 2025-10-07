@@ -1,11 +1,15 @@
 # Dart Overview with Language Chooser
 
+> “Master control flow, master performance.”  
+> — Azamov’s Dart Notes  
+
 ## Language Selection
 
 Please choose a language to view the content:
 
-- English
-- Uzbek
+- [English](#english-version)
+- [Uzbek](#uzbek-version)
+
 
 ---
 

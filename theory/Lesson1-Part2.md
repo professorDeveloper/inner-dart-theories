@@ -1,5 +1,8 @@
 # Dart, Flutter, Android VMlar va Dart VM vs ART
 
+> “Master control flow, master performance.”  
+> — Azamov’s Dart Notes  
+
 ## Choose Language
 
 - [English](#english-version)
