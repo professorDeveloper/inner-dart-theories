@@ -1,9 +1,7 @@
 # Dart What? 
-## its looking like simple but its really need for Interview i think someone isn`t know  inner information about dart ))
+### The content may seem simple, but it’s highly valuable for interview preparation, especially for those unfamiliar with Dart’s internal mechanisms.
 
-### I’m not a complete beginner myself, but I wanted to build a structured journey starting from absolute zero all the way up to hard interview-level concepts.
-
-
+### I’m not a complete beginner myself, but I want to create a structured learning path starting from the absolute basics and progressing to advanced, interview-level concepts.
 ---
 
 ## 🌟 Why this repository exists  
