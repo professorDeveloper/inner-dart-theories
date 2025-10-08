@@ -14,3 +14,16 @@
 //   print(name);
 //   }
 
+//Task3
+// textdagi  faqat lotin tilidagi harflarning unicode qiymatlarini chiqaring
+void main(){
+  var name ="2024 Hello PDP Academy  ݻ";
+  var unicodes =[];
+  for (var i =0; i < name.length; i++) {
+    if (name.codeUnitAt(i) >= 97 && name.codeUnitAt(i) <= 122 || name.codeUnitAt(i) >= 65 && name.codeUnitAt(i) <= 90) {
+      unicodes.add(name.codeUnitAt(i));
+    }
+  }
+  print(unicodes);
+}
+
