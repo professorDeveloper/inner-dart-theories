@@ -16,11 +16,20 @@
 // }
 
 //Masala3
-// void main() {
-//   Map map = {"id": "10001", "password": "admin123", "name": "Admin"};
-//   if (!map["password"].toString().contains("@")){
-//     map["password"] = map["password"] + "@";
-//   }
-//   print(map);
-// }
-
+void main() {
+  Map map = {"id": "10001", "password": "admin123", "name": "Admin"};
+  String password = map['password'];
+  if (password.isNotEmpty) {
+    bool isHave = false;
+    for (int i = 0; i < password.length; i++) {
+      if (password[i] == "@") {
+        isHave = true;
+        break;
+      }
+    }
+    if(!isHave){
+      map["password"] = "$password@";
+    }
+    print(map);
+  }
+}
