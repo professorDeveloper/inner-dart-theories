@@ -39,26 +39,26 @@
 // //   return -1;
 // // }
 //
-// /*
-// * Task3: Missing Number
-// * List da 1 dan N gacha raqamlar mavjud bo`lishi kerak.
-// * Ammo ulardan bittasi tushib qolgan.
-// * Shu “Missing Number” ni qaytaradigan funksiya yozing.
-// * Missing Number” deyiladi qachonki listda u raqamdan boshqa hamma raqam mavjud bo`lsa.
-// * */
-// //
-// // void main() {
-// //   var list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
-// //   print(findMissingNumber(list));
-// // }
-// //
-// // int findMissingNumber(List<int> list) {
-// //   int sum = 0;
-// //   for (var i = 0; i < list.length; i++) {
-// //     sum += list[i];
-// //   }
-// //   return sum;
-// // }
+/*
+* Task3: Missing Number
+* List da 1 dan N gacha raqamlar mavjud bo`lishi kerak.
+* Ammo ulardan bittasi tushib qolgan.
+* Shu “Missing Number” ni qaytaradigan funksiya yozing.
+* Missing Number” deyiladi qachonki listda u raqamdan boshqa hamma raqam mavjud bo`lsa.
+* */
+//
+// void main() {
+//   var list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+//   print(findMissingNumber(list));
+// }
+//
+// int findMissingNumber(List<int> list) {
+//   int sum = 0;
+//   for (var i = 0; i < list.length; i++) {
+//     sum += list[i];
+//   }
+//   return sum;
+// }
 //
 // /*
 // * Task4: Monotonic List
