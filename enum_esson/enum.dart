@@ -4,11 +4,12 @@ enum AppServer {
   prod('https://api.example.com');
 
   final String url;
+
   const AppServer(this.url);
 }
 
 void main() {
-  AppServer server = AppServer.prod;
+  AppServer server = AppServer.prod;@
 
   String url = server.url;
 
